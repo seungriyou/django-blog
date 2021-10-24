@@ -14,7 +14,9 @@
   <a href="#!"><img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/900/350" alt="random_image" /></a>
   {% endif %}
   <div class="card-body">
-    <div class="small text-muted mb-1">{{ p.created_at }}, 작성자명(개발예정)</div>
+    <div class="small text-muted mb-1">{{ p.created_at }}, by 
+      <a href="#">{{ p.author | upper }}</a>
+    </div>
     <h2 class="card-title h4">{{ p.title }}</h2>
     {% if p.hook_text %}
     <h6 class="text-muted mb-3">{{ p.hook_text }}</h6>
