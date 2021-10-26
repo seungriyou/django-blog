@@ -7,13 +7,18 @@
 {% if post_list.exists %}
 {% for p in post_list %}
 <!-- Blog post-->
-<div class="card mb-4">
+<div class="card mb-4" id="post-{{ p.pk }}">
   {% if p.head_image %}
   <a href="#!"><img class="card-img-top" src="{{ p.head_image.url }}" alt="{{ p }} head image" /></a>
   {% else %}
   <a href="#!"><img class="card-img-top" src="https://picsum.photos/seed/{{ p.id }}/900/350" alt="random_image" /></a>
   {% endif %}
   <div class="card-body">
+    {% if p.category %}
+    <span class="badge badge-secondary float-right">{{ p.category }}</span>
+    {% else %}
+    <span class="badge badge-secondary float-right">미분류</span>
+    {% endif %}
     <div class="small text-muted mb-1">{{ p.created_at }}, by 
       <a href="#">{{ p.author | upper }}</a>
     </div>
