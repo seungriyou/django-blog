@@ -135,3 +135,5 @@ _media/
 
 # secret
 secret.json
+.env.prod
+.env.prod.db
