@@ -137,3 +137,4 @@ _media/
 secret.json
 .env.prod
 .env.prod.db
+.env.dev
